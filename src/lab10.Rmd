@@ -17,6 +17,7 @@ library(praise)
 library(cowsay)
 library(sf)
 library(paletteer)
+library(wesanderson)
 ```
 
 
@@ -49,4 +50,24 @@ say("I love tacos!" , by = "random")
 
 ## usethis for everything 
 edited `edit_r_profile` to change r profile 
+
+R project first, then git and GitHub repro. 
+
+-usethis::use_git()
+-usethis::use_github()
+
+
+## paletteer: aggregated color palettes 
+
+```{r}
+storms %>% 
+  group_by(name) %>%  
+  summarize(min_pressure = min(pressure, na.rm = TRUE)) %>%  
+  slice_min(n=10, min_pressure) %>% 
+  ggplot(aes(x = min_pressure , y = name))  + 
+  geom_col(aes(fill = name)) + 
+  scale_fill_paletteer_d("rcartocolor::Pastel") 
+
+```
+
 
