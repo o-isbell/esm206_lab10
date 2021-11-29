@@ -1,0 +1,52 @@
+---
+title: "lab10"
+author: "Olivia Isbell"
+date: "11/29/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE) 
+
+library(tidyverse)
+library(usethis)
+library(janitor) 
+
+library(beepr)
+library(praise)
+library(cowsay)
+library(sf)
+library(paletteer)
+```
+
+
+## beepr::beep()
+
+Use `beep()` to give yourself an audio alert. 
+
+## for loop + beep 
+
+```{r, eval = FALSE}
+for (i in rev(seq(1:9999))) {
+  print(paste(i, "bottles fo beer on the wall"))
+}  
+
+beep(4)
+```
+
+## praise is nice 
+
+```{r}
+praise("${EXCLAMATION}!!! This code works ${adverb_manner}")
+
+praise("Holy ${creating}, Batman - this code works ${ADVERB_MANNER}!")
+```
+
+## cowsay::say to have characters to say something 
+```{r}
+say("I love tacos!" , by = "random")
+```
+
+## usethis for everything 
+edited `edit_r_profile` to change r profile 
+
